@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banana Quiz Challenge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🍌 Banana Game</h1>
+  <p id="welcome">Please log in or register.</p>
+  <p id="meta"></p>
+
+  <div class="auth-row">
+    <form id="register-form" class="card">
+      <h3>Register</h3>
+      <input id="reg-user" placeholder="new username" required>
+      <input id="reg-pass" type="password" placeholder="new password (min 4)" required>
+      <button type="submit">Register</button>
+    </form>
+
+    <form id="login-form" class="card">
+      <h3>Login</h3>
+      <input id="username" placeholder="username" required>
+      <input id="password" type="password" placeholder="password" required>
+      <label class="remember"><input type="checkbox" id="remember"> Remember me</label>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <button id="logout-btn" hidden>Logout</button>
+  <p id="auth-msg"></p>
+
+  <p id="logged-hint" hidden>Logged in — game  coming next.</p>
+
+  <script src="app.js"></script>
+</body>
+</html>
