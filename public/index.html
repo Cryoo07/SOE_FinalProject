@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Banana Quiz Challenge</title>
+  <title>Banana Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,7 +31,17 @@
   <button id="logout-btn" hidden>Logout</button>
   <p id="auth-msg"></p>
 
-  <p id="logged-hint" hidden>Logged in — game  coming next.</p>
+  <div id="game" hidden>
+    <h2>Banana Game</h2>
+    <img id="banana-img" alt="banana puzzle" style="max-width: 100%; display: block; margin: 10px auto;">
+    <div id="answer-section">
+      <input id="answer-input" placeholder="Enter your answer" style="padding:8px; width:60%;">
+      <button id="submit-answer">Submit</button>
+    </div>
+    <p id="game-msg"></p>
+    <p>Score: <span id="score">0</span></p>
+    <button id="next-btn">Next</button>
+  </div>
 
   <script src="app.js"></script>
 </body>

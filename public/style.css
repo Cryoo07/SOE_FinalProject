@@ -1,12 +1,15 @@
 body{font-family:Arial;text-align:center;margin-top:30px;background:#f7f9fc;color:#222;}
 .auth-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
 .card{background:#fff;border:1px solid #ddd;border-radius:8px;padding:16px;margin:12px auto;width:340px;max-width:92%;}
-#game{width:420px;}
+#game{width:700px;max-width:95%;margin:20px auto;background:#fff;border:1px solid #ddd;border-radius:8px;padding:24px;}
+#banana-img{max-width:100%;height:auto;display:block;margin:16px auto;border:1px solid #eee;}
+#answer-section{margin:12px 0;}
 input,button{margin:6px;padding:8px;font-size:1rem;}
 input{border:1px solid #aaa;border-radius:4px;}
 button{background:#2f6fed;color:#fff;border:1px solid #2f6fed;border-radius:4px;cursor:pointer;}
 button:hover{background:#1f55c4;}
-#auth-msg,#message{font-weight:bold;min-height:1.4em;}
+button:disabled{opacity:0.6;cursor:not-allowed;}
+#auth-msg,#message,#game-msg{font-weight:bold;min-height:1.4em;}
 #puzzle-img{background:#eee;min-height:100px;display:block;margin:0 auto 10px;border-radius:4px;}
 .remember{display:block;font-size:.9rem;color:#555;}
 #logout-btn{background:#6c757d;border-color:#6c757d;}
