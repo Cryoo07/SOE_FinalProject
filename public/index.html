@@ -3,46 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Banana Game</title>
+  <title>Banana Game - Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🍌 Banana Game</h1>
-  <p id="welcome">Please log in or register.</p>
-  <p id="meta"></p>
-
-  <div class="auth-row">
-    <form id="register-form" class="card">
-      <h3>Register</h3>
-      <input id="reg-user" placeholder="new username" required>
-      <input id="reg-pass" type="password" placeholder="new password (min 4)" required>
-      <button type="submit">Register</button>
-    </form>
-
-    <form id="login-form" class="card">
-      <h3>Login</h3>
-      <input id="username" placeholder="username" required>
-      <input id="password" type="password" placeholder="password" required>
-      <label class="remember"><input type="checkbox" id="remember"> Remember me</label>
-      <button type="submit">Login</button>
-    </form>
-  </div>
-
-  <button id="logout-btn" hidden>Logout</button>
-  <p id="auth-msg"></p>
-
-  <div id="game" hidden>
-    <h2>Banana Game</h2>
-    <img id="banana-img" alt="banana puzzle" style="max-width: 100%; display: block; margin: 10px auto;">
-    <div id="answer-section">
-      <input id="answer-input" placeholder="Enter your answer" style="padding:8px; width:60%;">
-      <button id="submit-answer">Submit</button>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="game.html">🍌 Banana Game</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="game.html">Play</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="admin.html" id="admin-nav-link" hidden>Admin</a>
+      </nav>
+      <button class="profile-trigger" id="profile-trigger" type="button" aria-haspopup="dialog" aria-controls="profile-dialog">
+        <span class="avatar" id="profile-avatar" aria-hidden="true">?</span>
+        <span id="profile-button-label">Profile</span>
+      </button>
     </div>
-    <p id="game-msg"></p>
-    <p>Score: <span id="score">0</span></p>
-    <button id="next-btn">Next</button>
+  </header>
+  <dialog class="profile-dialog" id="profile-dialog" aria-labelledby="profile-title">
+    <div class="profile-panel-header">
+      <h2 id="profile-title">Your profile</h2>
+      <button class="icon-button" id="profile-close" type="button" aria-label="Close profile">×</button>
+    </div>
+    <div id="profile-content" aria-live="polite"><p class="muted">Loading account...</p></div>
+  </dialog>
+
+  <div class="container">
+    <div class="card">
+      <h2>Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" maxlength="50" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" minlength="8" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+          <label style="display:flex;align-items:center;gap:8px;font-weight:normal;">
+            <input type="checkbox" id="remember" style="width:auto;"> Remember me
+          </label>
+        </div>
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p class="msg" id="login-msg"></p>
+      <p class="link-text">Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="auth.js"></script>
+  <script src="profile.js"></script>
 </body>
 </html>

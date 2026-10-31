@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banana Game - Leaderboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="game.html">🍌 Banana Game</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="game.html">Play</a>
+        <a href="leaderboard.html" aria-current="page">Leaderboard</a>
+        <a href="admin.html" id="admin-nav-link" hidden>Admin</a>
+      </nav>
+      <button class="profile-trigger" id="profile-trigger" type="button" aria-haspopup="dialog" aria-controls="profile-dialog">
+        <span class="avatar" id="profile-avatar" aria-hidden="true">?</span>
+        <span id="profile-button-label">Profile</span>
+      </button>
+    </div>
+  </header>
+  <dialog class="profile-dialog" id="profile-dialog" aria-labelledby="profile-title">
+    <div class="profile-panel-header">
+      <h2 id="profile-title">Your profile</h2>
+      <button class="icon-button" id="profile-close" type="button" aria-label="Close profile">×</button>
+    </div>
+    <div id="profile-content" aria-live="polite"><p class="muted">Loading account...</p></div>
+  </dialog>
+
+  <main class="page-container">
+    <section class="card leaderboard-page">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">COMMUNITY</p>
+          <h1>Leaderboard</h1>
+          <p class="muted">The top players, ranked by their best score.</p>
+        </div>
+        <a class="btn leaderboard-play" href="game.html">Play now</a>
+      </div>
+      <p class="leaderboard-status muted" id="leaderboard-status" aria-live="polite">Loading scores...</p>
+      <ol class="leaderboard-list" id="leaderboard-list"></ol>
+    </section>
+  </main>
+
+  <script src="leaderboard.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

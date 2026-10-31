@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banana Game - Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="game.html">🍌 Banana Game</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="game.html">Play</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="admin.html" id="admin-nav-link" aria-current="page" hidden>Admin</a>
+      </nav>
+      <button class="profile-trigger" id="profile-trigger" type="button" aria-haspopup="dialog" aria-controls="profile-dialog">
+        <span class="avatar" id="profile-avatar" aria-hidden="true">?</span>
+        <span id="profile-button-label">Profile</span>
+      </button>
+    </div>
+  </header>
+  <dialog class="profile-dialog" id="profile-dialog" aria-labelledby="profile-title">
+    <div class="profile-panel-header">
+      <h2 id="profile-title">Your profile</h2>
+      <button class="icon-button" id="profile-close" type="button" aria-label="Close profile">×</button>
+    </div>
+    <div id="profile-content" aria-live="polite"><p class="muted">Loading account...</p></div>
+  </dialog>
+
+  <main class="page-container">
+    <section class="card admin-page">
+      <p class="eyebrow">RESTRICTED AREA</p>
+      <h1>Admin section</h1>
+      <p class="muted" id="admin-status" aria-live="polite">Checking administrator access...</p>
+      <div class="admin-stats" id="admin-stats" hidden>
+        <article class="admin-stat"><span>Registered users</span><strong id="admin-user-count">—</strong></article>
+        <article class="admin-stat"><span>Recorded games</span><strong id="admin-game-count">—</strong></article>
+        <article class="admin-stat"><span>Administrators</span><strong id="admin-admin-count">—</strong></article>
+      </div>
+      <p class="admin-note" id="admin-note" hidden>Management tools can be added here. Admin access is checked by the server, not just hidden in the page.</p>
+      <a class="btn btn-secondary admin-return" href="game.html">Back to game</a>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

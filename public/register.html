@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banana Game - Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="game.html">🍌 Banana Game</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="game.html">Play</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="admin.html" id="admin-nav-link" hidden>Admin</a>
+      </nav>
+      <button class="profile-trigger" id="profile-trigger" type="button" aria-haspopup="dialog" aria-controls="profile-dialog">
+        <span class="avatar" id="profile-avatar" aria-hidden="true">?</span>
+        <span id="profile-button-label">Profile</span>
+      </button>
+    </div>
+  </header>
+  <dialog class="profile-dialog" id="profile-dialog" aria-labelledby="profile-title">
+    <div class="profile-panel-header">
+      <h2 id="profile-title">Your profile</h2>
+      <button class="icon-button" id="profile-close" type="button" aria-label="Close profile">×</button>
+    </div>
+    <div id="profile-content" aria-live="polite"><p class="muted">Loading account...</p></div>
+  </dialog>
+
+  <div class="container">
+    <div class="card">
+      <h2>Register</h2>
+      <form id="register-form">
+        <div class="form-group">
+          <label for="reg-user">Username</label>
+          <input type="text" id="reg-user" name="username" maxlength="50" placeholder="Choose a username" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-pass">Password</label>
+          <input type="password" id="reg-pass" name="password" minlength="8" placeholder="Choose a password (min 8 chars)" required>
+        </div>
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <p class="msg" id="register-msg"></p>
+      <p class="link-text">Already have an account? <a href="index.html">Login here</a></p>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

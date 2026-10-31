@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banana Game - Play</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="game.html">🍌 Banana Game</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="game.html" aria-current="page">Play</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="admin.html" id="admin-nav-link" hidden>Admin</a>
+      </nav>
+      <button class="profile-trigger" id="profile-trigger" type="button" aria-haspopup="dialog" aria-controls="profile-dialog">
+        <span class="avatar" id="profile-avatar" aria-hidden="true">?</span>
+        <span id="profile-button-label">Profile</span>
+      </button>
+    </div>
+  </header>
+
+  <dialog class="profile-dialog" id="profile-dialog" aria-labelledby="profile-title">
+    <div class="profile-panel-header">
+      <h2 id="profile-title">Your profile</h2>
+      <button class="icon-button" id="profile-close" type="button" aria-label="Close profile">×</button>
+    </div>
+    <div id="profile-content" aria-live="polite">
+      <p class="muted">Loading account...</p>
+    </div>
+  </dialog>
+
+  <div class="game-container">
+    <div class="user-info">
+      <p id="user-welcome">Please log in to play</p>
+    </div>
+
+    <div class="game-card" id="game-card" style="display:none;">
+      <div class="game-header">
+        <h2>Guess the Answer</h2>
+        <div class="score">Score: <span id="score">0</span></div>
+      </div>
+
+      <img id="banana-img" src="" alt="Banana puzzle">
+
+      <div class="answer-box">
+        <input type="text" id="answer-input" placeholder="Enter your answer...">
+        <button class="btn" id="submit-answer">Submit</button>
+      </div>
+
+      <p class="game-msg" id="game-msg"></p>
+
+      <button class="btn next-btn" id="next-btn">Next Puzzle</button>
+    </div>
+
+    <div class="card" id="login-prompt" style="display:none;max-width:400px;margin:0 auto;">
+      <h2>Login Required</h2>
+      <p style="text-align:center;margin-bottom:20px;">You need to login to play the Banana Game</p>
+      <a href="index.html"><button class="btn">Go to Login</button></a>
+      <p class="link-text">Or <a href="register.html">Register</a></p>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>
